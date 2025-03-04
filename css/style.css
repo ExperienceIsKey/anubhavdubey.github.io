@@ -454,11 +454,12 @@ pre {
   overflow-y: scroll; }
 
 .container {
-  width: 100%;
+  width: 90%;
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto; }
+  margin: 0 auto;
+/*  margin-right: auto;
+  margin-left: auto;*/ }
   @media (min-width: 576px) {
     .container {
       max-width: 540px; } }
@@ -3453,6 +3454,7 @@ input[type="button"].btn-block {
   display: block; }
 
 .navbar {
+  transition: width 0.3s ease;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9894,22 +9896,45 @@ textarea.form-control {
 
 /* -------------------------------------Vertical Navigation Bar------------------------------------------------*/
 
+/* SIDEBAR STYLES */
 #sidebar {
-  position: fixed;       /* Stick to the left side */
+  transition: width 0.3s ease; /* Smooth transition for width changes */
+  position: fixed;            /* Stick to the left side */
   top: 0;
   left: 0;
-  width: 300px;          /* Sidebar width */
-  height: 100vh;         /* Full viewport height */
-  background-color: #22194D; /* Dark background (tailwind gray-800 style) */
-  padding: 2rem 1rem;    /* Some padding for spacing */
-  z-index: 9999;         /* Ensure it stays on top of other elements */
+  width: 300px;               /* Sidebar width */
+  height: 100vh;              /* Full viewport height */
+  background-color: #22194D;  /* Dark background */
+  padding: 2rem 1rem;         /* Some padding for spacing */
+  z-index: 9999;              /* Ensure it stays on top of other elements */
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+  #sidebar .navbar {
+    /* Adjust navbar layout for smaller screens */
+    flex-direction: column;
+  }
+  .container {
+    width: 95%;
+  }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+  #sidebar h1 {
+    font-size: 1.5rem;
+  }
+  #sidebar .col {
+    min-width: 100%;
+  }
 }
 
 /* Container inside the sidebar */
 #sidebar .container {
   display: flex;
   flex-direction: column;
-  align-items: center !important;
+  align-items: center !important; /* Center content inside the sidebar */
 }
 
 /* Brand styling at the top */
@@ -9934,29 +9959,31 @@ textarea.form-control {
 #sidebar .nav-link {
   display: flex;
   align-items: center;
-  color: #fff !important;   /* Override Bootstrap link color */
+  color: #fff !important;     /* Override Bootstrap link color */
   padding: 0.75rem 0.5rem;
   margin: 0.25rem 0;
   border-radius: 4px;
   text-decoration: none;
-  transition: background-color 0.2s;
+  /* Smooth color transitions on hover */
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Icon spacing */
+/* Icon spacing & size */
 #sidebar .nav-link i {
   margin-right: 0.75rem;
   font-size: 1.2rem;
+  transition: color 0.2s ease; /* Smooth icon color transition */
 }
 
-/* Hover effect */
-#sidebar .nav-link:hover i {
-  color: #8476D0; /* Icon highlight color (light blue) */
-}
-
+/* Hover effect: box goes black, icon changes highlight color */
 #sidebar .nav-link:hover {
-  background-color: #000; /* Slightly lighter gray */
-  color: #fff;
+  background-color: #000; /* Black highlight */
+  color: #fff;            /* Keep text white */
   text-decoration: none;
+}
+
+#sidebar .nav-link:hover i {
+  color: #8476D0; /* Icon highlight color */
 }
 
 /*-------Emoji----------*/
