@@ -9898,35 +9898,25 @@ textarea.form-control {
 
 /* SIDEBAR STYLES */
 #sidebar {
-  transition: width 0.3s ease; /* Smooth transition for width changes */
-  position: fixed;            /* Stick to the left side */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 300px;               /* Sidebar width */
-  height: 100vh;              /* Full viewport height */
-  background-color: #22194D;  /* Dark background */
-  padding: 2rem 1rem;         /* Some padding for spacing */
-  z-index: 9999;              /* Ensure it stays on top of other elements */
+  width: 300px; /* Fixed width for sidebar */
+  height: 100vh; /* Full viewport height */
+  background-color: #22194D;
+  padding: 2rem 1rem;
+  z-index: 9999;
+  overflow-y: auto; /* Scrollable when content overflows */
+  transition: width 0.3s ease;
 }
 
-/* Responsive adjustments for tablets */
-@media (max-width: 768px) {
-  #sidebar .navbar {
-    /* Adjust navbar layout for smaller screens */
-    flex-direction: column;
+/* Media Query: Hide sidebar and allow full-width content on tablet/phone */
+@media (max-width: 992px) {
+  #sidebar {
+    display: none; /* Hide the sidebar */
   }
-  .container {
-    width: 95%;
-  }
-}
-
-/* Responsive adjustments for mobile */
-@media (max-width: 480px) {
-  #sidebar h1 {
-    font-size: 1.5rem;
-  }
-  #sidebar .col {
-    min-width: 100%;
+  body {
+    margin-left: 0; /* Let main content fill the entire width */
   }
 }
 
