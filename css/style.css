@@ -9910,7 +9910,7 @@ textarea.form-control {
 
 /* Individual skill item/badge */
 #my-skills-section .skill-item {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: #000;
   border: 1px solid rgba(242, 243, 244, 0.5);
@@ -9926,6 +9926,10 @@ textarea.form-control {
   background: #fff;
   transition: background-color 0.3s, transform 0.3s;
 }
+#my-skills-section .skill-item img, i{
+height:26px;
+width:26px;}
+
 
 #my-skills-section .skill-item:hover {
   background-color: #8476D0;
