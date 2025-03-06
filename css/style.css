@@ -40,6 +40,9 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+*{
+font-family: Poppins, sans-serif;
+}
 main {
   margin-left: 200px; /* same as sidebar width */
   padding: 2rem;
@@ -9927,8 +9930,8 @@ textarea.form-control {
   transition: background-color 0.3s, transform 0.3s;
 }
 #my-skills-section .skill-item img, i{
-height:26px;
-width:26px;}
+height:28px;
+width:28px;}
 
 
 #my-skills-section .skill-item:hover {
